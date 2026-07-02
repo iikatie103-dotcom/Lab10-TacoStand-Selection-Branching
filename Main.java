@@ -59,7 +59,7 @@ public class Main
 	public static void takeOrder() //TODO: upgrade per documentation
 	{
 		//DECLARATION + INITIALIZATION SECTION
-		int option, numTacosOrdered;
+		int option, numTacosOrdered; //make these static!!!!!!!!!
 
 		//INPUT SECTION
 		TacoStand.printMenu();
@@ -78,7 +78,10 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
 	{
-		System.out.println("Here you go, buen provecho!");
-		System.out.println("🌮");
+		if (TacoStand.areTacosAvailable(option, numTacosOrdered) == true) {
+			System.out.println("Here you go, buen provecho!");
+			System.out.println("🌮");
+		}
+		else System.out.println("Sorry, we don't have that many.");
 	}
 }
