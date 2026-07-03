@@ -78,10 +78,24 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
 	{
-		if (TacoStand.areTacosAvailable(Main.option, numTacosOrdered) == true) {
+		if (TacoStand.areTacosAvailable(Main.option, numTacos)) {
 			System.out.println("Here you go, buen provecho!");
-			System.out.println("🌮");
+			if (numTacos == 1){
+				System.out.println("🌮");
+			}
+			else if (numTacos == 2){
+				System.out.println("🌮🌮");
+			}
+			else if (numTacos == 3){
+				System.out.println("🌮🌮🌮");
+			}
+			else if (numTacos == 4){
+				System.out.println("🌮🌮🌮🌮");
+			}
+			else if (numTacos == 5){
+				System.out.println("🌮🌮🌮🌮🌮");
+			}
 		}
-		else System.out.println("Sorry, we don't have that many.");
+		else System.out.println("We don't have that many tacos, sorry! Try again :(");
 	}
 }
