@@ -101,16 +101,21 @@ public class TacoStand
 	 */
 	public static void updateTotalFunds(int tacoOption, int numTacos)
 	{
-		totalFunds += tacoOption * numTacos;
-		if (tacoOption == 1)
-			TacoStand.numAsada -= tacoOption* numTacos;
-		else if (tacoOption == 2)
-			TacoStand.numPollo -= tacoOption* numTacos;
-		else if (tacoOption == 3)
-			TacoStand.numLengua -= tacoOption* numTacos;
-		else if (tacoOption == 4)
-			TacoStand.numUltimate -= tacoOption* numTacos;
-
+		if (TacoStand.areTacosAvailable(tacoOption, numTacos)) {
+			if (tacoOption == 1) {
+				TacoStand.numAsada -= numTacos;
+				totalFunds += carneAsadaCost * numTacos;
+			} else if (tacoOption == 2) {
+				TacoStand.numPollo -= numTacos;
+				totalFunds += polloAsadoCost * numTacos;
+			} else if (tacoOption == 3) {
+				TacoStand.numLengua -= numTacos;
+				totalFunds += lenguaCost * numTacos;
+			} else if (tacoOption == 4) {
+				TacoStand.numUltimate -= numTacos;
+				totalFunds += ultimateTacoCost * numTacos;
+			}
+		}
 	}
 	
 	
@@ -124,13 +129,13 @@ public class TacoStand
 	 */
 	public static boolean areTacosAvailable(int tacoOption, int numTacos)
 	{
-		if (tacoOption == 1 && TacoStand.numAsada <= numTacos)
+		if (tacoOption == 1 && TacoStand.numAsada >= numTacos)
 				return true;
-		else if (tacoOption == 2 && TacoStand.numPollo <= numTacos)
+		else if (tacoOption == 2 && TacoStand.numPollo >= numTacos)
 				return true;
-		else if (tacoOption == 3 && TacoStand.numLengua <= numTacos)
+		else if (tacoOption == 3 && TacoStand.numLengua >= numTacos)
 			return true;
-		else if (tacoOption == 4 && TacoStand.numUltimate <= numTacos)
+		else if (tacoOption == 4 && TacoStand.numUltimate >= numTacos)
 				return true;
 			else return false;
 		}

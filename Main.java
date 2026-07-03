@@ -5,7 +5,7 @@
 
 public class Main
 {
-
+	static int option, numTacosOrdered;
 	/**
 	 * ALGORITHM:
 	 * - Add total funds to taco stand
@@ -59,15 +59,15 @@ public class Main
 	public static void takeOrder() //TODO: upgrade per documentation
 	{
 		//DECLARATION + INITIALIZATION SECTION
-		int option, numTacosOrdered; //make these static!!!!!!!!!
+		 //make these static!!!!!!!!!
 
 		//INPUT SECTION
 		TacoStand.printMenu();
-		option = UtilityBelt.readInt("Enter choice> ", 1, 4);
+		Main.option = UtilityBelt.readInt("Enter choice> ", 1, 4);
 		numTacosOrdered = UtilityBelt.readInt("Enter number of tacos you want> ", 1, 50);
 
 		//CALCULATION + OUTPUT SECTION
-		TacoStand.updateTotalFunds(option, numTacosOrdered);
+		TacoStand.updateTotalFunds(Main.option, numTacosOrdered);
 		Main.printConfirmation(numTacosOrdered);
 	}
 
@@ -78,7 +78,7 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
 	{
-		if (TacoStand.areTacosAvailable(option, numTacosOrdered) == true) {
+		if (TacoStand.areTacosAvailable(Main.option, numTacosOrdered) == true) {
 			System.out.println("Here you go, buen provecho!");
 			System.out.println("🌮");
 		}
