@@ -129,14 +129,20 @@ public class TacoStand
 	 */
 	public static boolean areTacosAvailable(int tacoOption, int numTacos)
 	{
-		if (tacoOption == 1 && TacoStand.numAsada >= numTacos)
-				return true;
-		else if (tacoOption == 2 && TacoStand.numPollo >= numTacos)
-				return true;
-		else if (tacoOption == 3 && TacoStand.numLengua >= numTacos)
+		if (tacoOption == 1 && TacoStand.numAsada >= numTacos) {
+			System.out.println("true");
 			return true;
-		else if (tacoOption == 4 && TacoStand.numUltimate >= numTacos)
-				return true;
-			else return false;
+		}
+		else if (tacoOption == 2 && TacoStand.numPollo >= numTacos) {
+			return true;
+		}
+		else if (tacoOption == 3 && TacoStand.numLengua >= numTacos) {
+			return true;
+		}
+		else if (tacoOption == 4 && TacoStand.numUltimate >= numTacos) {
+			return true;
+		}
+		else return false;
+
 		}
 }

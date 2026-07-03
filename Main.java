@@ -78,7 +78,8 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
 	{
-		if (TacoStand.areTacosAvailable(Main.option, numTacos)) {
+		System.out.println(TacoStand.areTacosAvailable(Main.option, Main.numTacosOrdered));
+		if (TacoStand.areTacosAvailable(Main.option, Main.numTacosOrdered)) {
 			System.out.println("Here you go, buen provecho!");
 			if (numTacos == 1){
 				System.out.println("🌮");
