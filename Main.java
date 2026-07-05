@@ -85,19 +85,19 @@ public class Main
 	{
 			System.out.println("Here you go, buen provecho!");
 			if (numTacos == 1){
-				System.out.println("🌮");
+				System.out.println("🌮\n");
 			}
 			else if (numTacos == 2){
-				System.out.println("🌮🌮");
+				System.out.println("🌮🌮\n");
 			}
 			else if (numTacos == 3){
-				System.out.println("🌮🌮🌮");
+				System.out.println("🌮🌮🌮\n");
 			}
 			else if (numTacos == 4){
-				System.out.println("🌮🌮🌮🌮");
+				System.out.println("🌮🌮🌮🌮\n");
 			}
 			else if (numTacos == 5){
-				System.out.println("🌮🌮🌮🌮🌮");
+				System.out.println("🌮🌮🌮🌮🌮\n");
 			}
 	}
 }
