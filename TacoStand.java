@@ -101,7 +101,6 @@ public class TacoStand
 	 */
 	public static void updateTotalFunds(int tacoOption, int numTacos)
 	{
-		if (TacoStand.areTacosAvailable(tacoOption, numTacos)) {
 			if (tacoOption == 1) {
 				TacoStand.numAsada -= numTacos;
 				totalFunds += carneAsadaCost * numTacos;
@@ -115,7 +114,6 @@ public class TacoStand
 				TacoStand.numUltimate -= numTacos;
 				totalFunds += ultimateTacoCost * numTacos;
 			}
-		}
 	}
 	
 	
@@ -130,7 +128,6 @@ public class TacoStand
 	public static boolean areTacosAvailable(int tacoOption, int numTacos)
 	{
 		if (tacoOption == 1 && TacoStand.numAsada >= numTacos) {
-			System.out.println("true");
 			return true;
 		}
 		else if (tacoOption == 2 && TacoStand.numPollo >= numTacos) {
